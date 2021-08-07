@@ -19,36 +19,28 @@ class LoginController: UIViewController {
     }()
     
     private lazy var emailConatinerView: UIView = {
-        let view = UIView()
-        view.backgroundColor = .red
-        view.heightAnchor.constraint(equalToConstant: 50).isActive = true
-        
-        let imageView = UIImageView()
-        imageView.image = #imageLiteral(resourceName: "ic_mail_outline_white_2x-1")
-        
-        view.addSubview(imageView)
-        imageView.anchor(left: view.leftAnchor, bottom: view.bottomAnchor,
-                         paddingLeft: 8, paddingBottom: 8)
-        imageView.setDimensions(width: 24, height: 24)
-
+        let image = #imageLiteral(resourceName: "ic_mail_outline_white_2x-1")
+        let view = Utilitles().inputContainerView(withImage: image, textField: emailTextField)
         return view
     }()
     
     private lazy var passwordConatinerView: UIView = {
-        let view = UIView()
-        view.backgroundColor = .systemPurple
-        view.heightAnchor.constraint(equalToConstant: 50).isActive = true
-        
-        let imageView = UIImageView()
-        imageView.image = #imageLiteral(resourceName: "ic_lock_outline_white_2x")
-        
-        view.addSubview(imageView)
-        imageView.anchor(left: view.leftAnchor, bottom: view.bottomAnchor,
-                         paddingLeft: 8, paddingBottom: 8)
-        imageView.setDimensions(width: 24, height: 24)
-
+        let image = #imageLiteral(resourceName: "ic_lock_outline_white_2x")
+        let view = Utilitles().inputContainerView(withImage: image, textField: passWordTextField)
         return view
     }()
+    
+    private let emailTextField: UITextField = {
+        let textField = Utilitles().textField(withPlaceholder: "Email")
+        return textField
+    }()
+    
+    private let passWordTextField: UITextField = {
+        let textField = Utilitles().textField(withPlaceholder: "Password")
+        textField.isSecureTextEntry = true
+        return textField
+    }()
+    
     
     // MARK: - Lifecycle
     override func viewDidLoad() {
@@ -59,6 +51,7 @@ class LoginController: UIViewController {
     // MARK: - Selectors
 
     // MARK: - Helpers
+
     func configureUI() {
         view.backgroundColor = .twitterBlue
         navigationController?.navigationBar.barStyle = .black
@@ -73,7 +66,8 @@ class LoginController: UIViewController {
         stack.spacing = 8
         
         view.addSubview(stack)
-        stack.anchor(top: logoImageView.bottomAnchor, left: view.leftAnchor, right: view.rightAnchor)
+        stack.anchor(top: logoImageView.bottomAnchor, left: view.leftAnchor,
+                     right: view.rightAnchor, paddingLeft: 16, paddingRight: 16)
     }
 
 }
