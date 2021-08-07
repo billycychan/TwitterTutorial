@@ -7,23 +7,33 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3227605326BB0CA50050C073 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3227605226BB0CA50050C073 /* Extensions.swift */; };
 		32FEC15F26BB010000734D68 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32FEC15E26BB010000734D68 /* AppDelegate.swift */; };
 		32FEC16126BB010000734D68 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32FEC16026BB010000734D68 /* SceneDelegate.swift */; };
-		32FEC16326BB010000734D68 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32FEC16226BB010000734D68 /* ViewController.swift */; };
 		32FEC16626BB010000734D68 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 32FEC16426BB010000734D68 /* Main.storyboard */; };
 		32FEC16826BB010100734D68 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 32FEC16726BB010100734D68 /* Assets.xcassets */; };
 		32FEC16B26BB010100734D68 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 32FEC16926BB010100734D68 /* LaunchScreen.storyboard */; };
+		32FEC17C26BB021600734D68 /* MainTabViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32FEC17B26BB021600734D68 /* MainTabViewController.swift */; };
+		32FEC17E26BB033800734D68 /* FeedController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32FEC17D26BB033800734D68 /* FeedController.swift */; };
+		32FEC18026BB035B00734D68 /* ExploreController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32FEC17F26BB035B00734D68 /* ExploreController.swift */; };
+		32FEC18226BB037900734D68 /* NotificationsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32FEC18126BB037900734D68 /* NotificationsController.swift */; };
+		32FEC18426BB038C00734D68 /* ConversationsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32FEC18326BB038C00734D68 /* ConversationsController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		3227605226BB0CA50050C073 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		32FEC15B26BB010000734D68 /* TwitterTutorial.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TwitterTutorial.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		32FEC15E26BB010000734D68 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		32FEC16026BB010000734D68 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		32FEC16226BB010000734D68 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		32FEC16526BB010000734D68 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		32FEC16726BB010100734D68 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		32FEC16A26BB010100734D68 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		32FEC16C26BB010100734D68 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		32FEC17B26BB021600734D68 /* MainTabViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabViewController.swift; sourceTree = "<group>"; };
+		32FEC17D26BB033800734D68 /* FeedController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedController.swift; sourceTree = "<group>"; };
+		32FEC17F26BB035B00734D68 /* ExploreController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExploreController.swift; sourceTree = "<group>"; };
+		32FEC18126BB037900734D68 /* NotificationsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationsController.swift; sourceTree = "<group>"; };
+		32FEC18326BB038C00734D68 /* ConversationsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConversationsController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,15 +66,69 @@
 		32FEC15D26BB010000734D68 /* TwitterTutorial */ = {
 			isa = PBXGroup;
 			children = (
+				32FEC17526BB015700734D68 /* Model */,
+				32FEC17226BB014000734D68 /* View */,
+				32FEC17726BB017800734D68 /* ViewModel */,
+				32FEC17826BB017E00734D68 /* Controller */,
+				32FEC17926BB018300734D68 /* API */,
+				32FEC17A26BB018800734D68 /* Utils */,
 				32FEC15E26BB010000734D68 /* AppDelegate.swift */,
 				32FEC16026BB010000734D68 /* SceneDelegate.swift */,
-				32FEC16226BB010000734D68 /* ViewController.swift */,
 				32FEC16426BB010000734D68 /* Main.storyboard */,
 				32FEC16726BB010100734D68 /* Assets.xcassets */,
 				32FEC16926BB010100734D68 /* LaunchScreen.storyboard */,
 				32FEC16C26BB010100734D68 /* Info.plist */,
 			);
 			path = TwitterTutorial;
+			sourceTree = "<group>";
+		};
+		32FEC17226BB014000734D68 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		32FEC17526BB015700734D68 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Model;
+			path = "New Group2/Model";
+			sourceTree = "<group>";
+		};
+		32FEC17726BB017800734D68 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		32FEC17826BB017E00734D68 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				32FEC17B26BB021600734D68 /* MainTabViewController.swift */,
+				32FEC17D26BB033800734D68 /* FeedController.swift */,
+				32FEC17F26BB035B00734D68 /* ExploreController.swift */,
+				32FEC18126BB037900734D68 /* NotificationsController.swift */,
+				32FEC18326BB038C00734D68 /* ConversationsController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		32FEC17926BB018300734D68 /* API */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = API;
+			sourceTree = "<group>";
+		};
+		32FEC17A26BB018800734D68 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				3227605226BB0CA50050C073 /* Extensions.swift */,
+			);
+			path = Utils;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -137,9 +201,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				32FEC16326BB010000734D68 /* ViewController.swift in Sources */,
+				32FEC18226BB037900734D68 /* NotificationsController.swift in Sources */,
 				32FEC15F26BB010000734D68 /* AppDelegate.swift in Sources */,
+				32FEC18026BB035B00734D68 /* ExploreController.swift in Sources */,
+				3227605326BB0CA50050C073 /* Extensions.swift in Sources */,
 				32FEC16126BB010000734D68 /* SceneDelegate.swift in Sources */,
+				32FEC17C26BB021600734D68 /* MainTabViewController.swift in Sources */,
+				32FEC18426BB038C00734D68 /* ConversationsController.swift in Sources */,
+				32FEC17E26BB033800734D68 /* FeedController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
