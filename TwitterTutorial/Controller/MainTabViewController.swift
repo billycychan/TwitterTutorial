@@ -12,6 +12,15 @@ class MainTabViewController: UITabBarController {
     
     // MARK: - Properties
     
+    var user: User? {
+        didSet {
+            guard let nav = viewControllers?.first as? UINavigationController else { return }
+            guard let feed = nav.viewControllers.first as? FeedController else { return }
+            
+            feed.user = user
+        }
+    }
+    
     let actionButton: UIButton = {
         let button = UIButton(type: .system)
         button.tintColor = .white
@@ -39,7 +48,10 @@ class MainTabViewController: UITabBarController {
     // MARK: - API
     
     func fetchUser() {
-        UserService().fetchUser()
+        UserService().fetchUser { user in
+            print("DEBUG: MainTab user is \(user.username)")
+            self.user = user
+        }
     }
     
     func authenticateUserAndConfigureUI() {
