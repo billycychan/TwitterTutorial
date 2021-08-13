@@ -37,6 +37,11 @@ class MainTabViewController: UITabBarController {
     }
     
     // MARK: - API
+    
+    func fetchUser() {
+        UserService().fetchUser()
+    }
+    
     func authenticateUserAndConfigureUI() {
         if Auth.auth().currentUser == nil {
             DispatchQueue.main.async {
@@ -48,6 +53,7 @@ class MainTabViewController: UITabBarController {
         } else {
             configureViewControllers()
             configureUI()
+            fetchUser()
         }
     }
     

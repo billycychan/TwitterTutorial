@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		3227605326BB0CA50050C073 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3227605226BB0CA50050C073 /* Extensions.swift */; };
 		3280012126C6DD8A00E66DC3 /* AuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3280012026C6DD8A00E66DC3 /* AuthService.swift */; };
+		3280012326C6DE0B00E66DC3 /* UserService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3280012226C6DE0B00E66DC3 /* UserService.swift */; };
+		3280012526C6E14800E66DC3 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3280012426C6E14800E66DC3 /* User.swift */; };
 		32D5253526BEF052002CC989 /* LoginController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32D5253426BEF052002CC989 /* LoginController.swift */; };
 		32D5253726BEF0BF002CC989 /* RegistrationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32D5253626BEF0BF002CC989 /* RegistrationController.swift */; };
 		32D5253926BEF69D002CC989 /* Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32D5253826BEF69D002CC989 /* Utilities.swift */; };
@@ -31,6 +33,8 @@
 		2D44CCAF4A94AA207807A93F /* Pods-TwitterTutorial.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TwitterTutorial.release.xcconfig"; path = "Target Support Files/Pods-TwitterTutorial/Pods-TwitterTutorial.release.xcconfig"; sourceTree = "<group>"; };
 		3227605226BB0CA50050C073 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		3280012026C6DD8A00E66DC3 /* AuthService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthService.swift; sourceTree = "<group>"; };
+		3280012226C6DE0B00E66DC3 /* UserService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserService.swift; sourceTree = "<group>"; };
+		3280012426C6E14800E66DC3 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		32D5253426BEF052002CC989 /* LoginController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginController.swift; sourceTree = "<group>"; };
 		32D5253626BEF0BF002CC989 /* RegistrationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationController.swift; sourceTree = "<group>"; };
 		32D5253826BEF69D002CC989 /* Utilities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utilities.swift; sourceTree = "<group>"; };
@@ -67,6 +71,7 @@
 		3280011E26C6DCA900E66DC3 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				3280012426C6E14800E66DC3 /* User.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -75,6 +80,7 @@
 			isa = PBXGroup;
 			children = (
 				3280012026C6DD8A00E66DC3 /* AuthService.swift */,
+				3280012226C6DE0B00E66DC3 /* UserService.swift */,
 			);
 			path = API;
 			sourceTree = "<group>";
@@ -295,6 +301,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3280012326C6DE0B00E66DC3 /* UserService.swift in Sources */,
 				32FEC18226BB037900734D68 /* NotificationsController.swift in Sources */,
 				32FEC15F26BB010000734D68 /* AppDelegate.swift in Sources */,
 				32D5253926BEF69D002CC989 /* Utilities.swift in Sources */,
@@ -302,6 +309,7 @@
 				3227605326BB0CA50050C073 /* Extensions.swift in Sources */,
 				32FEC16126BB010000734D68 /* SceneDelegate.swift in Sources */,
 				3280012126C6DD8A00E66DC3 /* AuthService.swift in Sources */,
+				3280012526C6E14800E66DC3 /* User.swift in Sources */,
 				32FEC17C26BB021600734D68 /* MainTabViewController.swift in Sources */,
 				32FEC18426BB038C00734D68 /* ConversationsController.swift in Sources */,
 				32D5253526BEF052002CC989 /* LoginController.swift in Sources */,
