@@ -20,8 +20,19 @@ class FeedController: UIViewController {
         super.viewDidLoad()
         
         configureUI()
+        fetchTweets()
         // Do any additional setup after loading the view.
     }
+    
+    // MARK: - API
+    
+    func fetchTweets() {
+        TweetService.shared.fetchTweets { tweets in
+            print("DEBUG:  The tweets are  \(tweets)")
+        }
+    }
+
+    
     // MARK: - Helpers
     
     func configureUI() {
