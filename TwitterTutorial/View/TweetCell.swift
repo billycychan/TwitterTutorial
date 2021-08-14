@@ -10,6 +10,10 @@ import UIKit
 
 class TweetCell: UICollectionViewCell {
     
+    var tweet: Tweet? {
+        didSet { configure() }
+    }
+    
     // MARK: - Properties
     private let profileImageView: UIImageView = {
         let imageView = UIImageView()
@@ -127,5 +131,12 @@ class TweetCell: UICollectionViewCell {
     }
     
     // MARK: - Helpers
+    
+    func configure() {
+        guard let tweet = tweet else { return }
+        captionLabel.text = tweet.caption
+        profileImageView.sd_setImage(with: tweet.user.profileImageUrl, completed: nil)
+        infoLabel.text = tweet.user.username
+    }
 }
 
