@@ -23,6 +23,7 @@ class ProfileController: UICollectionViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
+        navigationController?.navigationBar.barStyle = .black
         navigationController?.navigationBar.isHidden = true
     }
     
