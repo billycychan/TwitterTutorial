@@ -31,6 +31,7 @@ class FeedController: UICollectionViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
+        navigationController?.navigationBar.barStyle = .default
         navigationController?.navigationBar.isHidden = false
     }
     
