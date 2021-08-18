@@ -27,7 +27,11 @@ class FeedController: UICollectionViewController {
         
         configureUI()
         fetchTweets()
-        // Do any additional setup after loading the view.
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        navigationController?.navigationBar.isHidden = false
     }
     
     // MARK: - API
