@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		322072A626CD687900697F90 /* UserCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 322072A526CD687900697F90 /* UserCell.swift */; };
 		3227605326BB0CA50050C073 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3227605226BB0CA50050C073 /* Extensions.swift */; };
 		3280012126C6DD8A00E66DC3 /* AuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3280012026C6DD8A00E66DC3 /* AuthService.swift */; };
 		3280012326C6DE0B00E66DC3 /* UserService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3280012226C6DE0B00E66DC3 /* UserService.swift */; };
@@ -42,6 +43,7 @@
 
 /* Begin PBXFileReference section */
 		2D44CCAF4A94AA207807A93F /* Pods-TwitterTutorial.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TwitterTutorial.release.xcconfig"; path = "Target Support Files/Pods-TwitterTutorial/Pods-TwitterTutorial.release.xcconfig"; sourceTree = "<group>"; };
+		322072A526CD687900697F90 /* UserCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserCell.swift; sourceTree = "<group>"; };
 		3227605226BB0CA50050C073 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		3280012026C6DD8A00E66DC3 /* AuthService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthService.swift; sourceTree = "<group>"; };
 		3280012226C6DE0B00E66DC3 /* UserService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserService.swift; sourceTree = "<group>"; };
@@ -164,6 +166,7 @@
 				32CDFCD326CA8CF000F7A426 /* ProfileHeader.swift */,
 				32EE16B926CC20A3009818D6 /* ProfileFilterView.swift */,
 				32EE16BB26CC21D1009818D6 /* ProfileFilterCell.swift */,
+				322072A526CD687900697F90 /* UserCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -339,6 +342,7 @@
 				32CDFCC426C7BBCB00F7A426 /* CaptionTextView.swift in Sources */,
 				32EE16BC26CC21D1009818D6 /* ProfileFilterCell.swift in Sources */,
 				32FEC15F26BB010000734D68 /* AppDelegate.swift in Sources */,
+				322072A626CD687900697F90 /* UserCell.swift in Sources */,
 				32D5253926BEF69D002CC989 /* Utilities.swift in Sources */,
 				32FEC18026BB035B00734D68 /* ExploreController.swift in Sources */,
 				3227605326BB0CA50050C073 /* Extensions.swift in Sources */,
