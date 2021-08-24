@@ -10,6 +10,13 @@ import UIKit
 class TweetHeader: UICollectionReusableView {
     
     // MARK: - Properties
+    
+    var tweet: Tweet? {
+        didSet {
+            configure()
+        }
+    }
+    
     private lazy var profileImageView: UIImageView = {
         let imageView = UIImageView()
         imageView.contentMode = .scaleAspectFill
@@ -44,7 +51,6 @@ class TweetHeader: UICollectionReusableView {
         let label = UILabel()
         label.font = UIFont.systemFont(ofSize: 20)
         label.numberOfLines = 0
-        label.text = "Some text caption from spider for now"
         return label
     }()
     
@@ -53,7 +59,6 @@ class TweetHeader: UICollectionReusableView {
         label.font = UIFont.systemFont(ofSize: 14)
         label.textColor = .lightGray
         label.textAlignment = .left
-        label.text = "6:33 PM 01/28/2020"
         return label
     }()
     
@@ -65,19 +70,9 @@ class TweetHeader: UICollectionReusableView {
         return button
     }()
     
-    private let retweetLabel: UILabel = {
-        let label = UILabel()
-        label.font = UIFont.systemFont(ofSize: 14)
-        label.text = "2 Retweets"
-        return label
-    }()
+    private let retweetLabel = UILabel()
     
-    private let likeLabel: UILabel = {
-        let label = UILabel()
-        label.font = UIFont.systemFont(ofSize: 14)
-        label.text = "0 likes"
-        return label
-    }()
+    private let likeLabel = UILabel()
         
     private lazy var statsView: UIView = {
         let view = UIView()
@@ -194,6 +189,20 @@ class TweetHeader: UICollectionReusableView {
     }
     
     // MARK: - Helpers
+    
+    func configure() {
+        guard let tweet = tweet else { return }
+        
+        let viewModel = TweetViewModel(tweet: tweet)
+        captionLabel.text = tweet.caption
+        fullnameLabel.text = tweet.user.fullname
+        usernameLabel.text = viewModel.usernameText
+        profileImageView.sd_setImage(with: viewModel.profileImageUrl)
+        dateLabel.text = viewModel.headerTimestamp
+        retweetLabel.attributedText = viewModel.retweetAttributedString
+        likeLabel.attributedText = viewModel.likesAttributedString
+
+    }
     
     func createButton(withImageName imageName: String) -> UIButton {
         let button = UIButton(type: .system)
