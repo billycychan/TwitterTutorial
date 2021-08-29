@@ -11,6 +11,7 @@
 		3227605326BB0CA50050C073 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3227605226BB0CA50050C073 /* Extensions.swift */; };
 		3267F90526DB6F23007C9F04 /* UploadTweetViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3267F90426DB6F23007C9F04 /* UploadTweetViewModel.swift */; };
 		3267F90726DB7F05007C9F04 /* ActionSheetLauncher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3267F90626DB7F05007C9F04 /* ActionSheetLauncher.swift */; };
+		3267F90926DB85EC007C9F04 /* ActionSheetCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3267F90826DB85EC007C9F04 /* ActionSheetCell.swift */; };
 		3280012126C6DD8A00E66DC3 /* AuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3280012026C6DD8A00E66DC3 /* AuthService.swift */; };
 		3280012326C6DE0B00E66DC3 /* UserService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3280012226C6DE0B00E66DC3 /* UserService.swift */; };
 		3280012526C6E14800E66DC3 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3280012426C6E14800E66DC3 /* User.swift */; };
@@ -51,6 +52,7 @@
 		3227605226BB0CA50050C073 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		3267F90426DB6F23007C9F04 /* UploadTweetViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UploadTweetViewModel.swift; sourceTree = "<group>"; };
 		3267F90626DB7F05007C9F04 /* ActionSheetLauncher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionSheetLauncher.swift; sourceTree = "<group>"; };
+		3267F90826DB85EC007C9F04 /* ActionSheetCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionSheetCell.swift; sourceTree = "<group>"; };
 		3280012026C6DD8A00E66DC3 /* AuthService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthService.swift; sourceTree = "<group>"; };
 		3280012226C6DE0B00E66DC3 /* UserService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserService.swift; sourceTree = "<group>"; };
 		3280012426C6E14800E66DC3 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
@@ -176,6 +178,7 @@
 				32EE16BB26CC21D1009818D6 /* ProfileFilterCell.swift */,
 				322072A526CD687900697F90 /* UserCell.swift */,
 				328B41EB26D543D30033C50C /* TweetHeader.swift */,
+				3267F90826DB85EC007C9F04 /* ActionSheetCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -356,6 +359,7 @@
 				32FEC15F26BB010000734D68 /* AppDelegate.swift in Sources */,
 				322072A626CD687900697F90 /* UserCell.swift in Sources */,
 				32D5253926BEF69D002CC989 /* Utilities.swift in Sources */,
+				3267F90926DB85EC007C9F04 /* ActionSheetCell.swift in Sources */,
 				32FEC18026BB035B00734D68 /* ExploreController.swift in Sources */,
 				3227605326BB0CA50050C073 /* Extensions.swift in Sources */,
 				328B41EA26D541C20033C50C /* TweetController.swift in Sources */,
