@@ -25,7 +25,7 @@ class CaptionTextView: UITextView {
         
         backgroundColor = .white
         font = UIFont.systemFont(ofSize: 16)
-        heightAnchor.constraint(equalToConstant: 300).isActive = true
+        heightAnchor.constraint(equalToConstant: 100).isActive = true
         textContainer?.lineBreakMode = .byCharWrapping
         
         addSubview(placeHolderLabel)
