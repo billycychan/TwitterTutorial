@@ -107,12 +107,12 @@ class TweetCell: UICollectionViewCell {
         
         let actionStack = UIStackView(arrangedSubviews: [commentButton, retweetButton, likeButton, shareButton])
         actionStack.axis = .horizontal
-        actionStack.spacing = 72
-        
+//        actionStack.spacing =
+        actionStack.alignment = .center
+        actionStack.distribution = .equalSpacing
         addSubview(actionStack)
-        actionStack.centerX(inView: self)
-        actionStack.anchor(bottom: bottomAnchor, paddingBottom: 8)
-        
+        actionStack.anchor(left: profileImageView.rightAnchor, bottom: bottomAnchor, right: rightAnchor, paddingLeft: 12, paddingBottom: 8, paddingRight: 12)
+
         
         let underlineView = UIView()
         underlineView.backgroundColor = .systemGroupedBackground
