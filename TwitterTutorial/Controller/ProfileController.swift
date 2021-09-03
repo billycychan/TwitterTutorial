@@ -132,12 +132,12 @@ extension ProfileController: ProfileHeaderViewDelegate {
         if user.isFollowed {
             UserService.shared.unfollowUser(uid: user.uid) { err, ref in
                 self.user.isFollowed = false
-                self.collectionView.reloadData()
+                self.fetchUserStats()
             }
         } else {
             UserService.shared.followUser(uid: user.uid) { err, ref in
                 self.user.isFollowed = true
-                self.collectionView.reloadData()
+                self.fetchUserStats()
             }
         }
         
