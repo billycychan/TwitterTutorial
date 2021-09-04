@@ -117,6 +117,11 @@ extension FeedController: TweetCellDelegate {
             cell.tweet?.didLike.toggle()
             let likes = tweet.didLike ? tweet.likes - 1 : tweet.likes + 1
             cell.tweet?.likes = likes
+            
+            // Update back the tweets instance
+            if let index = self.tweets.firstIndex(where: {$0.uid == tweet.uid}) {
+                self.tweets[index] = cell.tweet!
+            }
         }
         
     }
