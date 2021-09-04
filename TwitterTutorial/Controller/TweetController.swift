@@ -127,7 +127,8 @@ extension TweetControlller: ActionSheetLauncherDelegate {
         case .unfollow(let user):
             UserService.shared.unfollowUser(uid: user.uid) { (err, ref) in
                 print("DEBUG: Did Unfollow user \(user.username)")
-            }        case .report:
+            }
+        case .report:
             print("DEBUG: Report Tweet")
         case .delete:
             print("DEBUG: Delete Tweet")

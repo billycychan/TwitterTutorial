@@ -25,7 +25,7 @@ struct NotificationViewModel {
     var notificationMessage: String {
         switch type {
         case .follow: return " started following you"
-        case .like: return " like your of your tweets"
+        case .like: return " like your tweets"
         case .reply: return " replied to your tweet"
         case .retweet: return " retweet your tweet"
         case .mention: return " mentioned you in a tweet"
@@ -45,6 +45,14 @@ struct NotificationViewModel {
     
     var profileImageUrl: URL? {
         return user.profileImageUrl
+    }
+    
+    var shouldideFollowingButton: Bool {
+        return type != .follow
+    }
+    
+    var followButtonText: String {
+        return user.isFollowed ? "Following" : "Follow"
     }
     
     init(notification: Notification) {
