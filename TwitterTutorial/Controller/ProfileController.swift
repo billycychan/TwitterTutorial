@@ -69,14 +69,14 @@ class ProfileController: UICollectionViewController {
     }
     
     func fetchLikedTweets() {
-        TweetService.shared.fetchReplies(forUser: user) { tweets in
-            self.replies = tweets
+        TweetService.shared.fetchLikes(forUser: user) { tweets in
+            self.likeTweets = tweets
         }
     }
     
     func fetchReplies() {
-        TweetService.shared.fetchLikes(forUser: user) { tweets in
-            self.likeTweets = tweets
+        TweetService.shared.fetchReplies(forUser: user) { tweets in
+            self.replies = tweets
         }
     }
     
@@ -145,14 +145,18 @@ extension ProfileController: UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         let viewModel = TweetViewModel(tweet: currentDataSource[indexPath.row])
-        let height = viewModel.size(forWidth: view.frame.width).height
-        return CGSize(width: view.frame.width, height: height + 72)
+        var height = viewModel.size(forWidth: view.frame.width).height + 72
+        
+        if currentDataSource[indexPath.row].isReply {
+            height += 20
+        }
+        
+        return CGSize(width: view.frame.width, height: height)
     }
 }
 
 extension ProfileController: ProfileHeaderViewDelegate {
     func didSelect(filter: ProfileFilterOptions) {
-        print("DEBUG: Did select filter \(filter)")
         self.selectedFilter = filter
     }
     

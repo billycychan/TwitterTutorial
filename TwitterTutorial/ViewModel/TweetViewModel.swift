@@ -43,6 +43,15 @@ struct TweetViewModel {
         return attributedText(withValue: tweet.likes, text: "Likes")
     }
     
+    var shouldHideReplyLabel: Bool {
+        return !tweet.isReply
+    }
+    
+    var replyText: String? {
+        guard let replyingToUsername = tweet.replyingTo else { return nil }
+        return "🖍Replying To @\(replyingToUsername)"
+    }
+    
     var userInfoText: NSAttributedString {
         let title = NSMutableAttributedString(string: user.fullname,
                                               attributes: [.font: UIFont.boldSystemFont(ofSize: 14)])
@@ -78,6 +87,8 @@ struct TweetViewModel {
                                                                .foregroundColor: UIColor.lightGray]))
         return attributedTitle
     }
+    
+    // MARK: - Helpers
     
     func size(forWidth width: CGFloat) -> CGSize {
         let measurementLabel = UILabel()
