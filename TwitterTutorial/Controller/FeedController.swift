@@ -35,20 +35,32 @@ class FeedController: UICollectionViewController {
         navigationController?.navigationBar.isHidden = false
     }
     
+    // MARK: - Selectors
+    
+    @objc func handleRefresh() {
+        fetchTweets()
+    }
+    
     // MARK: - API
     
     func fetchTweets() {
+        collectionView.refreshControl?.beginRefreshing()
+        
         TweetService.shared.fetchTweets { tweets in
-            self.tweets = tweets
-            self.checkIfUserLikedTweets(tweets)
+            self.tweets = tweets.sorted(by: {$0.timestamp > $1.timestamp})
+            self.checkIfUserLikedTweets(self.tweets)
+            self.collectionView.refreshControl?.endRefreshing()
         }
     }
     
     func checkIfUserLikedTweets(_ tweets: [Tweet]) {
-        for (index, tweet) in tweets.enumerated() {
+        tweets.forEach { tweet in
             TweetService.shared.checkIfUserLikeTweet(tweet) { didLike in
                 guard didLike == true else { return }
-                self.tweets[index].didLike = true
+                
+                if let index = self.tweets.firstIndex(where: { $0.tweetID == tweet.tweetID }) {
+                    self.tweets[index].didLike = true
+                }
             }
         }
     }
@@ -63,9 +75,13 @@ class FeedController: UICollectionViewController {
         collectionView.backgroundColor = .white
         
         let imageView = UIImageView(image: UIImage(named: "twitter_logo_blue"))
-            imageView.contentMode = .scaleAspectFit
-            imageView.setDimensions(width: 44, height: 44)
-            navigationItem.titleView = imageView
+        imageView.contentMode = .scaleAspectFit
+        imageView.setDimensions(width: 44, height: 44)
+        navigationItem.titleView = imageView
+        
+        let refreshControl = UIRefreshControl()
+        refreshControl.addTarget(self, action: #selector(handleRefresh), for: .valueChanged)
+        collectionView.refreshControl = refreshControl
     }
     
     func configureLeftButton() {
