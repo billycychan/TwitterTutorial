@@ -14,6 +14,7 @@
 		322072A626CD687900697F90 /* UserCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 322072A526CD687900697F90 /* UserCell.swift */; };
 		3227605326BB0CA50050C073 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3227605226BB0CA50050C073 /* Extensions.swift */; };
 		323185D226E8667D00165B8E /* EditProfileController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 323185D126E8667D00165B8E /* EditProfileController.swift */; };
+		323185D526E8694100165B8E /* EditProfileHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 323185D426E8694100165B8E /* EditProfileHeader.swift */; };
 		3267F90526DB6F23007C9F04 /* UploadTweetViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3267F90426DB6F23007C9F04 /* UploadTweetViewModel.swift */; };
 		3267F90726DB7F05007C9F04 /* ActionSheetLauncher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3267F90626DB7F05007C9F04 /* ActionSheetLauncher.swift */; };
 		3267F90926DB85EC007C9F04 /* ActionSheetCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3267F90826DB85EC007C9F04 /* ActionSheetCell.swift */; };
@@ -61,6 +62,7 @@
 		322072A526CD687900697F90 /* UserCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserCell.swift; sourceTree = "<group>"; };
 		3227605226BB0CA50050C073 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		323185D126E8667D00165B8E /* EditProfileController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfileController.swift; sourceTree = "<group>"; };
+		323185D426E8694100165B8E /* EditProfileHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfileHeader.swift; sourceTree = "<group>"; };
 		3267F90426DB6F23007C9F04 /* UploadTweetViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UploadTweetViewModel.swift; sourceTree = "<group>"; };
 		3267F90626DB7F05007C9F04 /* ActionSheetLauncher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionSheetLauncher.swift; sourceTree = "<group>"; };
 		3267F90826DB85EC007C9F04 /* ActionSheetCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionSheetCell.swift; sourceTree = "<group>"; };
@@ -114,6 +116,17 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		323185D326E8692800165B8E /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+				32CDFCD326CA8CF000F7A426 /* ProfileHeader.swift */,
+				32EE16B926CC20A3009818D6 /* ProfileFilterView.swift */,
+				32EE16BB26CC21D1009818D6 /* ProfileFilterCell.swift */,
+				323185D426E8694100165B8E /* EditProfileHeader.swift */,
+			);
+			path = Profile;
+			sourceTree = "<group>";
+		};
 		3280011E26C6DCA900E66DC3 /* Model */ = {
 			isa = PBXGroup;
 			children = (
@@ -185,11 +198,9 @@
 		32FEC17226BB014000734D68 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				323185D326E8692800165B8E /* Profile */,
 				32CDFCC326C7BBCB00F7A426 /* CaptionTextView.swift */,
 				32CDFCC926C7CAE100F7A426 /* TweetCell.swift */,
-				32CDFCD326CA8CF000F7A426 /* ProfileHeader.swift */,
-				32EE16B926CC20A3009818D6 /* ProfileFilterView.swift */,
-				32EE16BB26CC21D1009818D6 /* ProfileFilterCell.swift */,
 				322072A526CD687900697F90 /* UserCell.swift */,
 				328B41EB26D543D30033C50C /* TweetHeader.swift */,
 				3267F90826DB85EC007C9F04 /* ActionSheetCell.swift */,
@@ -393,6 +404,7 @@
 				3280012126C6DD8A00E66DC3 /* AuthService.swift in Sources */,
 				32EE16BE26CC2A5F009818D6 /* ProfileHeaderViewModel.swift in Sources */,
 				32CDFCC226C7B4C800F7A426 /* UploadTweetController.swift in Sources */,
+				323185D526E8694100165B8E /* EditProfileHeader.swift in Sources */,
 				3280012526C6E14800E66DC3 /* User.swift in Sources */,
 				32FEC17C26BB021600734D68 /* MainTabViewController.swift in Sources */,
 				3203F39A26E3AB8F001B3B62 /* NotificationService.swift in Sources */,
