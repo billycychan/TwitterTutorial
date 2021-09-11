@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import ActiveLabel
 
 enum UploadTweetConfiguration {
     case tweet
@@ -44,11 +45,11 @@ class UploadTweetController: UIViewController {
         return imageView
     }()
     
-    private lazy var replyLabel: UILabel = {
-        let label = UILabel()
+    private lazy var replyLabel: ActiveLabel = {
+        let label = ActiveLabel()
         label.font = UIFont.systemFont(ofSize: 14)
         label.textColor = .lightGray
-        label.text = "replying ...."
+        label.mentionColor = .twitterBlue
         label.widthAnchor.constraint(equalToConstant: view.frame.width).isActive = true
         return label
     }()
@@ -68,9 +69,19 @@ class UploadTweetController: UIViewController {
         fatalError("init(coder:) has not been implemented")
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        NotificationCenter.default.addObserver(self, selector: #selector(textDidChange), name: UITextView.textDidChangeNotification, object: nil)
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         configureUI()
+        configureNavigationBar()
+        configureMentionHandler()
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        NotificationCenter.default.removeObserver(self)
     }
     
     
@@ -99,6 +110,11 @@ class UploadTweetController: UIViewController {
     // MARK: - API
     
     
+    
+    // MARK: - Helpers
+    @objc func textDidChange() {
+        captionTextView.placeHolderLabel.isHidden = captionTextView.text.count > 0
+    }
     
     // MARK: - Helpers
     
@@ -135,6 +151,12 @@ class UploadTweetController: UIViewController {
         
         navigationItem.leftBarButtonItem = UIBarButtonItem(barButtonSystemItem: .cancel, target: self, action: #selector(handleCancel))
         navigationItem.rightBarButtonItem = UIBarButtonItem(customView: actionButton)
+    }
+    
+    func configureMentionHandler() {
+        replyLabel.handleMentionTap { mention in
+            print("DEBUG: Mentioned User is \(mention)")
+        }
     }
     
 }
