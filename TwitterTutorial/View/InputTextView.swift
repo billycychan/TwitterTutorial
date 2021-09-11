@@ -7,7 +7,7 @@
 
 import UIKit
 
-class CaptionTextView: UITextView {
+class InputTextView: UITextView {
     
     // MARK: - Properties
     
@@ -32,11 +32,15 @@ class CaptionTextView: UITextView {
         placeHolderLabel.anchor(top: topAnchor, left: leftAnchor,
                                 paddingTop: 8, paddingLeft: 4)
         
-        NotificationCenter.default.addObserver(self, selector: #selector(handleTextInputChange), name: UITextView.textDidChangeNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(handleTextInputChange), name: UITextView.textDidEndEditingNotification, object: nil)
     }
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
+    }
+    
+    deinit {
+        NotificationCenter.default.removeObserver(self)
     }
     
     // MARK: - Selectors
