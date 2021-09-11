@@ -9,7 +9,7 @@ import UIKit
 
 private let reuseIdentifier = "EditProfileCell"
 
-protocol EditProfileControllerDelegate: class {
+protocol EditProfileControllerDelegate: AnyObject {
     func controller(_ controller: EditProfileController, wantsToUpdate user: User)
 }
 
@@ -21,8 +21,11 @@ class EditProfileController: UITableViewController {
     private lazy var headerView = EditProfileHeader(user: user)
     private let imagePicker = UIImagePickerController()
     weak var delegate: EditProfileControllerDelegate?
-    private var userInfoChange: Bool = false
-    
+    private var userInfoChanged: Bool = false
+    private var imageChanged: Bool {
+        selectedImage != nil
+    }
+
     private var selectedImage: UIImage? {
         didSet { headerView.profileImageView.image = selectedImage }
     }
@@ -54,13 +57,40 @@ class EditProfileController: UITableViewController {
     }
     
     @objc func handleDone() {
+        view.endEditing(true)
+        guard imageChanged || userInfoChanged else { return }
         updateUserData()
     }
     
     // MARK: - API
     
     func updateUserData() {
-        UserService.shared.saveUserData(user: user) { err, ref in
+        if imageChanged && !userInfoChanged {
+            print("DEBUG: Changed Image and not Data")
+            updateProfileImage()
+        }
+        
+        if userInfoChanged && !imageChanged {
+            print("DEBUG: Changed Data and not Data")
+            UserService.shared.saveUserData(user: user) { err, ref in
+                self.delegate?.controller(self, wantsToUpdate: self.user)
+            }
+        }
+        
+        if userInfoChanged && imageChanged {
+            print("DEBUG: Changed Both")
+            UserService.shared.saveUserData(user: user) { err, ref in
+                self.updateProfileImage()
+            }
+        }
+        
+    }
+    
+    func updateProfileImage() {
+        guard let image = selectedImage else { return }
+        
+        UserService.shared.updateProfileImage(image: image) { profileImageUrl in
+            self.user.profileImageUrl = profileImageUrl
             self.delegate?.controller(self, wantsToUpdate: self.user)
         }
     }
@@ -79,7 +109,6 @@ class EditProfileController: UITableViewController {
         navigationItem.leftBarButtonItem = UIBarButtonItem(barButtonSystemItem: .cancel, target: self, action: #selector(handleCancel))
         navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .done
                                                             , target: self, action: #selector(handleDone))
-        navigationItem.rightBarButtonItem?.isEnabled = false
     }
     
     func configureTableView() {
@@ -142,8 +171,7 @@ extension EditProfileController: UIImagePickerControllerDelegate, UINavigationCo
 extension EditProfileController: EditProfileCellDelegate {
     func updateUserInfo(_ cell: EditProfileCell) {
         guard let viewModel = cell.viewModel else { return }
-        userInfoChange = true
-        navigationItem.rightBarButtonItem?.isEnabled = true
+        userInfoChanged = true
         
         switch viewModel.option {
         case .fullname:

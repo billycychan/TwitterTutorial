@@ -7,7 +7,7 @@
 
 import UIKit
 
-protocol EditProfileHeaderDelegate: class {
+protocol EditProfileHeaderDelegate: AnyObject {
     func didTapChangeProfilePhoto()
 }
 

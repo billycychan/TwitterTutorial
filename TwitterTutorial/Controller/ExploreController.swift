@@ -82,7 +82,7 @@ extension ExploreController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: reuseIdentifier, for: indexPath) as! UserCell
         let user = inSearchMode ? filteredUsers[indexPath.row] : users[indexPath.row]
-        cell.user = users[indexPath.row]
+        cell.user = user
         return cell
     }
     
