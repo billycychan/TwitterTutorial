@@ -32,6 +32,7 @@ class MainTabViewController: UITabBarController {
         let button = UIButton(type: .system)
         button.tintColor = .white
         button.backgroundColor = .twitterBlue
+        button.setImage(#imageLiteral(resourceName: "ic_mail_outline_white_2x-1"), for: .normal)
         button.addTarget(self, action: #selector(actionButtonTapped), for: .touchUpInside)
         return button
     }()
