@@ -186,7 +186,7 @@ extension ProfileController: ProfileHeaderViewDelegate {
                 self.user.isFollowed = true
                 self.fetchUserStats()
                 
-                NotificationService.shared.uploadNotification(type: .follow, user: self.user)
+                NotificationService.shared.uploadNotification(toUser: self.user, type: .follow)
             }
         }
         
